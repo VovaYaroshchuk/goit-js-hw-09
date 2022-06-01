@@ -28,8 +28,15 @@ function onFormSubmit(e) {
 };
 
 function addTextToInput() { 
-  if (localStorage.getItem(STORAGE_KEY)) {
-    feedbackForm.email.value = JSON.parse(localStorage.getItem(STORAGE_KEY)).email;
-    feedbackForm.message.value = JSON.parse(localStorage.getItem(STORAGE_KEY)).message;
-  }
+  if (!JSON.parse(localStorage.getItem(STORAGE_KEY))) {
+    return
+  };
+   
+  if(JSON.parse(localStorage.getItem(STORAGE_KEY)).email){
+    feedbackForm.email.value = JSON.parse(localStorage.getItem(STORAGE_KEY)).email
+  };
+  if(JSON.parse(localStorage.getItem(STORAGE_KEY)).message){
+    feedbackForm.message.value = JSON.parse(localStorage.getItem(STORAGE_KEY)).message
+  };
+   
 };

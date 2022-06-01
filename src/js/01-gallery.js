@@ -15,19 +15,16 @@ galleryItems.map(({preview, original, description}) =>
 `
 )
 
-  gallery.insertAdjacentHTML('beforeend', createGallery.join(''))
+gallery.insertAdjacentHTML('beforeend', createGallery.join(''))
 
-  gallery.addEventListener('click' , openBigPicture)
+gallery.addEventListener('click' , openBigPicture)
 
-  var lightbox = new SimpleLightbox('.gallery .gallery__item', { captionsData: "alt", captionDelay: "250" });
+var lightbox = new SimpleLightbox('.gallery .gallery__item', { captionsData: "alt", captionDelay: "250" });
 
-  function openBigPicture(e) {
-      e.preventDefault()
+function openBigPicture(e) {
+  e.preventDefault()
 
-      if (e.target.nodeName !== 'IMG') {
-        return;
+  if (e.target.nodeName !== 'IMG') {
+      return;
     };
-    
-     lightbox
-
-  }
+}

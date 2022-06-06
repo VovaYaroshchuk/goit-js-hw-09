@@ -1,5 +1,6 @@
 const startBtn = document.querySelector('[data-start]');
 const stopBtn = document.querySelector('[data-stop]');
+let setInterval = null;
 
 startBtn.addEventListener('click', startColorRandomizer);
 stopBtn.addEventListener('click', stopColorRandomizer);

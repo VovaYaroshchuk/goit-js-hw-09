@@ -18,25 +18,23 @@ const options = {
     defaultDate: new Date(),
     minuteIncrement: 1,
     onClose(selectedDates) {
-       
-    
-      // if (selectedDates.length === 0) {
-      //   return;
-      // };
+      if (selectedDates.length === 0) {
+        return;
+      };
 
-      // if (selectedDate.getTime() <= now.getTime()) {
-      //   Report.failure(
-      //       'Incorect date',
-      //       '"Please choose a date in the future',
-      //       'Okay',
-      //       );
-      //   this.setDate(now);
-      // } else {startBtn.disabled = false;};
+      if (selectedDates[0] <= new Date()) {
+        Report.failure(
+            'Incorect date',
+            '"Please choose a date in the future',
+            'Okay',
+            );
+        this.setDate(new Date());
+      } else {startBtn.disabled = false;};
       
       const startTimer = () => {
-        const selectedDate = selectedDates[0];
-        const now = new Date();
-        const diff = selectedDate.getTime() - now.getTime();
+      const selectedDate = selectedDates[0];
+      const now = new Date();
+      const diff = selectedDate.getTime() - now.getTime();
 
         startBtn.disabled = false;
           const { days, hours, minutes, seconds } = convertMs(diff);

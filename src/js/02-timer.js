@@ -44,7 +44,7 @@ const options = {
           secondsRef.textContent = addLeadingZero(seconds);
 
             if (
-                daysRef.textContent === '0' &&
+                daysRef.textContent === '00' &&
                 hoursRef.textContent === '00' &&
                 minutesRef.textContent === '00' &&
                 secondsRef.textContent === '00'
